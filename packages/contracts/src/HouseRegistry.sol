@@ -9,8 +9,8 @@ contract HouseResgistry is ERC721, ERC721Burnable, Ownable {
     uint256 private _nextTokenId;
 
     constructor(address initialOwner)
-        ERC721("House", "HOUSE ")
-        Ownable(initialOwner)
+        ERC721("House", "HOUSE")
+        Ownable()
     {}
 
     function mintHouse(address to) public {

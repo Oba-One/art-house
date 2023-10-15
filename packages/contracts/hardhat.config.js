@@ -1,34 +1,19 @@
 require("dotenv/config");
-require("hardhat-deploy");
 require("hardhat-contract-sizer");
 require("@nomicfoundation/hardhat-foundry");
 require("@nomicfoundation/hardhat-toolbox");
 require("@openzeppelin/hardhat-upgrades");
 
 const {
-  ETHEREUM_BASE_PROVIDER_URL = "https://mainnet.base.org",
-  ETHEREUM_BASE_GOERLI_PROVIDER_URL = "https://goerli.base.org",
+  ETHEREUM_SCROLL_SEPOLIA_PROVIDER_URL = "https://sepolia-rpc.scroll.io/",
+  ETHEREUM_BASE_GOERLI_PROVIDER_URL = "https://base-goerli.g.alchemy.com/v2/IoQ-Xhgcg-Yuc4h_6Yk_6c8iJoKysKWk",
+  ETHEREUM_POLYGON_MUMBAI_PROVIDER_URL = "https://polygon-mumbai.g.alchemy.com/v2/V1ADvYFrja2nCZH19GPBcQootx5bHZYz",
   ETHERSCAN_API_KEY,
   FORGE_PRIVATE_KEY:
     deployer = "ledger://0x0000000000000000000000000000000000000000",
 
   PROFILE: isProfiling,
 } = process.env;
-
-const base = (address) => ({
-  8453: address,
-});
-
-const baseGoerli = (address) => ({
-  84531: address,
-});
-
-const NamedAccounts = {
-  deployer: {
-    ...base(deployer),
-    ...baseGoerli(deployer),
-  },
-};
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -50,7 +35,6 @@ module.exports = {
   typechain: {
     target: "ethers-v6",
   },
-  namedAccounts: NamedAccounts,
   networks: {
     hardhat: {
       accounts: {
@@ -61,9 +45,9 @@ module.exports = {
       saveDeployments: false,
       live: false,
     },
-    base: {
-      chainId: 8453,
-      url: ETHEREUM_BASE_PROVIDER_URL,
+    "scroll-sepolia": {
+      chainId: 534351,
+      url: ETHEREUM_SCROLL_SEPOLIA_PROVIDER_URL,
       saveDeployments: true,
       live: true,
       accounts: [deployer],
@@ -74,7 +58,14 @@ module.exports = {
       saveDeployments: true,
       live: true,
       // gasMultiplier: 2,
-      gasPrice: 1000000000,
+      // gasPrice: 1000000000,
+      accounts: [deployer],
+    },
+    "polygon-mumbai": {
+      chainId: 80001,
+      url: ETHEREUM_POLYGON_MUMBAI_PROVIDER_URL,
+      saveDeployments: true,
+      live: true,
       accounts: [deployer],
     },
   },
