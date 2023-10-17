@@ -13,12 +13,13 @@ contract ArtRegistry is ERC721, ERC721Burnable, Ownable {
         Ownable()
     {}
 
-    function mintArt(address house, string memory nfcId, string memory metadata) public onlyOwner {
+    function mintArt(address house, string memory nfcId, string memory metadata) external  {
         uint256 tokenId = _nextTokenId++;
         _safeMint(house, tokenId);
     }
 
-    function burnArt(uint256 tokenId) public onlyOwner {
+    function burnArt(uint256 tokenId) external {
+        require(_isApprovedOrOwner(_msgSender(), tokenId), "ArtRegistry: caller is not owner nor approved");
         _burn(tokenId);
     }
 }

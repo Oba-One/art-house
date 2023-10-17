@@ -37,15 +37,15 @@
     "build": "pnpm recursive run build",
     "lint": "pnpm recursive run lint",
     "test": "pnpm recursive run test",
-    "dev": "concurrently -n \"APP,WEB,API,CONTRACTS,GRAPH\" -c \"bgMagenta.bold,bgGreen.bold,bgCyan.bold,bgYellow.bold,bgWhite.bold\" \"pnpm run dev:app\" \"pnpm run dev:web\" \"pnpm run dev:api\" \"pnpm run dev:contracts\" \"pnpm run dev:graph\"",
+    "dev": "concurrently -n \"APP,DASHBOARD,API,CONTRACTS\" -c \"bgMagenta.bold,bgGreen.bold,bgCyan.bold,bgYellow.bold\" \"pnpm run dev:app\" \"pnpm run dev:dashboard\" \"pnpm run dev:api\" \"pnpm run dev:contracts\"",
     "dev:app": "pnpm --filter 'app' run dev",
-    "dev:web": "pnpm --filter 'web' run  dev",
+    "dev:dashboard": "pnpm --filter 'dashboard' run  dev",
     "dev:api": "pnpm --filter 'api' run  dev",
-    "dev:graph": "pnpm --filter 'graph' run  dev",
     "dev:contracts": "pnpm --filter 'contracts' run  dev",
     "deploy:local": "pnpm --filter 'contracts' run deploy:local --network local",
-    "deploy:base": "pnpm --filter 'contracts' run deploy:base --network base",
-    "deploy:base-goerli": "pnpm --filter 'contracts' run deploy:base-goerli --network base-goerli"
+    "deploy:op-goerli": "pnpm --filter 'contracts' run deploy:op-goerli --network op-goerli",
+    "deploy:scroll-sepolia": "pnpm --filter 'contracts' run deploy:scroll-sepolia --network scroll-sepolia",
+    "deploy:polygon-mumbai": "pnpm --filter 'contracts' run deploy:polygon-mumbai --network polygon-mumbai"
   },
   "dependencies": {
     "dotenv": "16.3.1",
@@ -53,7 +53,6 @@
     "viem": "^1.10.9"
   },
   "devDependencies": {
-    "@latticexyz/cli": "2.0.0-next.9",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "concurrently": "8.2.1",

@@ -28,6 +28,7 @@
   "dependencies": {
     "@ethereum-attestation-service/eas-sdk": "^1.1.0-beta.3",
     "@urql/core": "4.1.2",
+    "axios": "1.5.1",
     "bob-tsm": "^1.1.2",
     "connect-redis": "7.1.0",
     "cookie-parser": "1.4.6",
@@ -36,7 +37,6 @@
     "express": "4.18.2",
     "express-session": "1.17.3",
     "morgan": "1.10.0",
-    "node-fetch": "^3.3.1",
     "redis": "4.6.8",
     "siwe": "2.1.4",
     "tap": "^16.3.4"

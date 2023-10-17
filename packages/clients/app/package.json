@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.0.7",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite --host",
@@ -9,9 +9,13 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@airstack/airstack-react": "0.5.5",
     "@emotion/react": "11.11.1",
     "@privy-io/react-auth": "^1.40.3",
     "@privy-io/wagmi-connector": "0.1.4",
+    "@pushprotocol/restapi": "1.4.24",
+    "@pushprotocol/socket": "0.5.2",
+    "@pushprotocol/uiweb": "1.1.14",
     "@react-spring/web": "9.7.3",
     "@xstate/react": "3.2.2",
     "axios": "1.5.0",

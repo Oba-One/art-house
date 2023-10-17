@@ -52,8 +52,8 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
       manifest: {
-        name: "Dapp",
-        short_name: "Dapp",
+        name: "Art House App",
+        short_name: "Art House App",
         icons: [
           {
             src: "assets/logo-64.png",

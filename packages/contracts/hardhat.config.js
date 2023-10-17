@@ -6,7 +6,7 @@ require("@openzeppelin/hardhat-upgrades");
 
 const {
   ETHEREUM_SCROLL_SEPOLIA_PROVIDER_URL = "https://sepolia-rpc.scroll.io/",
-  ETHEREUM_BASE_GOERLI_PROVIDER_URL = "https://base-goerli.g.alchemy.com/v2/IoQ-Xhgcg-Yuc4h_6Yk_6c8iJoKysKWk",
+  ETHEREUM_OP_GOERLI_PROVIDER_URL = "https://op-goerli.g.alchemy.com/v2/IoQ-Xhgcg-Yuc4h_6Yk_6c8iJoKysKWk",
   ETHEREUM_POLYGON_MUMBAI_PROVIDER_URL = "https://polygon-mumbai.g.alchemy.com/v2/V1ADvYFrja2nCZH19GPBcQootx5bHZYz",
   ETHERSCAN_API_KEY,
   FORGE_PRIVATE_KEY:
@@ -52,9 +52,9 @@ module.exports = {
       live: true,
       accounts: [deployer],
     },
-    "base-goerli": {
+    "op-goerli": {
       chainId: 84531,
-      url: ETHEREUM_BASE_GOERLI_PROVIDER_URL,
+      url: ETHEREUM_OP_GOERLI_PROVIDER_URL,
       saveDeployments: true,
       live: true,
       // gasMultiplier: 2,

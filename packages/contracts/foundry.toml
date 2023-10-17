@@ -27,8 +27,8 @@ eth_rpc_url = "http://localhost:8545"
 [profile.scroll-sepolia]
 eth_rpc_url = "https://sepolia-rpc.scroll.io/"
 
-[profile.base-goerli]
-eth_rpc_url = "https://base-goerli.g.alchemy.com/v2/IoQ-Xhgcg-Yuc4h_6Yk_6c8iJoKysKWk"
+[profile.op-goerli]
+eth_rpc_url = "https://opt-goerli.g.alchemy.com/v2/UF7j76yPWLAbLszYLS50UzHQYg3K3m9X"
 
 [profile.polygon-mumbai]
 eth_rpc_url = "https://polygon-mumbai.g.alchemy.com/v2/V1ADvYFrja2nCZH19GPBcQootx5bHZYz"

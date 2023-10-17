@@ -7,10 +7,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { server } from "./server";
+import { port } from "./constants";
 
 const IS_GOOGLE_CLOUD_RUN = process.env.K_SERVICE !== undefined;
 const host = IS_GOOGLE_CLOUD_RUN ? "0.0.0.0" : undefined;
-const port = Number(process.env.PORT) || 3000;
 
 if (process.env.NODE_ENV !== "production") {
   const httpsServer = https.createServer(

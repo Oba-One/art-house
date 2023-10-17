@@ -13,6 +13,7 @@ declare module "express-session" {
     nonce: string | null;
     siwe: SiweMessage | null;
     chainId?: 420 | 85431 | 999 | 919;
+    squareAccessToken?: string;
   }
 }
 

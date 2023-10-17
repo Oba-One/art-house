@@ -12,11 +12,12 @@
     "anvil": "source .env && anvil --fork-url $ANVIL_FORK_URL --chain-id $ANVIL_CHAIN_ID",
     "build": "wagmi generate",
     "deploy": "npx hardhat run scripts/deploy.js",
-    "deploy:scroll": "source .env && FOUNDRY_PROFILE=scroll forge script script/Scroll.s.sol:ScrollScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
-    "deploy:base-goerli": "source .env && FOUNDRY_PROFILE=base-goerli forge script script/BaseGoerli.s.sol:BaseScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
+    "deploy:scroll-sepolia": "source .env && FOUNDRY_PROFILE=scroll-sepolia forge script script/ScrollSepolia.s.sol:ScrollScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
+    "deploy:op-goerli": "source .env && FOUNDRY_PROFILE=op-goerli forge script script/OpGoerli.s.sol:OpScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
     "deploy:polygon-mumbai": "source .env && FOUNDRY_PROFILE=polygon-mumbai forge script script/PolygonMumbai.s.sol:PolygonMumbaiScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "5.0.0",
     "@openzeppelin/contracts-upgradeable": "5.0.0",
     "ethers": "^6.7.1"
   },
@@ -45,6 +46,7 @@
     "solhint": "^3.3.7",
     "ts-node": ">=8.0.0",
     "typechain": "^8.2.0",
+    "forge-std": "https://github.com/foundry-rs/forge-std.git#74cfb77e308dd188d2f58864aaf44963ae6b88b1",
     "ds-test": "https://github.com/dapphub/ds-test.git#e282159d5170298eb2455a6c05280ab5a73a4ef0",
     "prettier": "^2.6.2",
     "prettier-plugin-solidity": "^1.0.0-beta.19"

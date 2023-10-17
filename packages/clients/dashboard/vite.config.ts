@@ -43,8 +43,8 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
       manifest: {
-        name: "Waves Dashboard",
-        short_name: "Waves Dashboard",
+        name: "Art House Dashboard",
+        short_name: "Art House Dashboard",
         icons: [
           {
             src: "assets/logo-64.png",
@@ -131,6 +131,6 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 3001,
+    port: 3002,
   },
 });
