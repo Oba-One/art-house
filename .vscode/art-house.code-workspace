@@ -1,22 +1,28 @@
 {
   "folders": [
     {
-      "path": "../waves/packages"
-    },
-    {
+      "name": "art-house",
       "path": ".."
     },
     {
+      "name": "contracts",
       "path": "../packages/contracts"
     },
     {
+      "name": "api",
       "path": "../packages/api"
     },
     {
+      "name": "app",
       "path": "../packages/clients/app"
     },
     {
+      "name": "dashboard",
       "path": "../packages/clients/dashboard"
+    },
+    {
+      "name": "packages",
+      "path": "../waves/packages"
     }
   ],
   "settings": {
