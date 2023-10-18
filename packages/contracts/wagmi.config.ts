@@ -25,8 +25,10 @@ export default defineConfig({
      * @see https://wagmi.sh/cli/plugins/foundry
      */
     foundry({
-      exclude: ["lib/*"],
-      deployments: {},
+      forge: {
+        clean: true,
+        build: true,
+      },
     }),
     /**
      * Generates react hooks from your abis

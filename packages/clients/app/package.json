@@ -30,7 +30,6 @@
     "react-spinners": "0.13.8",
     "siwe": "2.1.4",
     "util": "^0.12.4",
-    "wagmi": "^1.4.1",
     "web3.storage": "4.5.5",
     "xstate": "4.38.2"
   },
