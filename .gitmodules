@@ -1,3 +1,6 @@
 [submodule "packages/contracts/lib/tokenbound"]
 	path = packages/contracts/lib/tokenbound
 	url = https://github.com/tokenbound/contracts
+[submodule "packages/contracts/lib/openzeppelin-contracts"]
+	path = packages/contracts/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
