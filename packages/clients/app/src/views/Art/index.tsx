@@ -1,9 +1,9 @@
 import React from "react";
 
-interface HomeProps {}
+interface ArtViewProps {}
 
-const Home: React.FC<HomeProps> = ({}) => {
+const ArtView: React.FC<ArtViewProps> = ({}) => {
   return <section className={`relative w-full h-full`}></section>;
 };
 
-export default Home;
+export default ArtView;

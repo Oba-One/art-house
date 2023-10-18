@@ -1,6 +1,6 @@
 import { SpringValue, a } from "@react-spring/web";
 
-interface ProfileInfoProps {
+interface AccountInfoProps {
   username?: string;
   avatar?: string;
   avatarSpring: {
@@ -9,7 +9,7 @@ interface ProfileInfoProps {
   };
 }
 
-export const ProfileInfo: React.FC<ProfileInfoProps> = ({
+export const AccountInfo: React.FC<AccountInfoProps> = ({
   avatar,
   avatarSpring,
   username,

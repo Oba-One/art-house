@@ -1,13 +1,13 @@
 import { a, useTransition } from "@react-spring/web";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
-import { useHome } from "../hooks/views/useHome";
-import { useExplore } from "../hooks/views/useExplore";
-import { useProfile } from "../hooks/views/useProfile";
+import { useArt } from "../hooks/views/useArt";
+import { useScan } from "../hooks/views/useScan";
+import { useAccount } from "../hooks/views/useAccount";
 
-import Home from "./Home";
-import Explore from "./Explore";
-import Profile from "./Profile";
+import Art from "./Art";
+import Scan from "./Scan";
+import Account from "./Account";
 
 export default function Views() {
   const location = useLocation();
@@ -23,9 +23,9 @@ export default function Views() {
     },
   });
 
-  const home = useHome();
-  const explore = useExplore();
-  const profile = useProfile();
+  const art = useArt();
+  const scan = useScan();
+  const account = useAccount();
 
   return transitions((style, location) => (
     <a.main
@@ -33,10 +33,10 @@ export default function Views() {
       style={style}
     >
       <Routes location={location}>
-        <Route path="home" element={<Home {...home} />} />
-        <Route path="explore" element={<Explore {...explore} />} />
-        <Route path="profile" element={<Profile {...profile} />} />
-        <Route path="*" element={<Navigate to="profile" />} />
+        <Route path="art" element={<Art {...art} />} />
+        <Route path="scan" element={<Scan {...scan} />} />
+        <Route path="account" element={<Account {...account} />} />
+        <Route path="*" element={<Navigate to="account" />} />
       </Routes>
     </a.main>
   ));

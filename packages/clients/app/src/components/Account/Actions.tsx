@@ -2,9 +2,9 @@ import { Web3Props } from "../../hooks/providers/web3";
 
 import { Button } from "../Button";
 
-interface ProfileActionsProps extends Web3Props {}
+interface AccountActionsProps extends Web3Props {}
 
-export const ProfileActions: React.FC<ProfileActionsProps> = ({
+export const AccountActions: React.FC<AccountActionsProps> = ({
   error,
   address,
   logout,

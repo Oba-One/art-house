@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Web3Props } from "../../hooks/providers/web3";
-import { ProfileDataProps } from "../../hooks/views/useProfile";
+import { AccountDataProps } from "../../hooks/views/useAccount";
 
-import { ProfileInfo } from "../../components/Profile/Info";
-import { ProfileActions } from "../../components/Profile/Actions";
+import { AccountInfo } from "../../components/Account/Info";
+import { AccountActions } from "../../components/Account/Actions";
 
-interface ProfileProps extends ProfileDataProps, Web3Props {}
+interface AccountProps extends AccountDataProps, Web3Props {}
 
-export const Profile: React.FC<ProfileProps> = ({
+export const Account: React.FC<AccountProps> = ({
   avatarSpring,
   address,
   name,
@@ -34,15 +34,15 @@ export const Profile: React.FC<ProfileProps> = ({
   return (
     <section className={`grid place-items-center h-full w-full gap-3 px-6`}>
       <div className={`relative w-full`}>
-        <ProfileInfo
+        <AccountInfo
           avatar={"/assets/avatar.png"}
           username={name || address}
           avatarSpring={avatarSpring}
         />
-        <ProfileActions {...web3Props} />
+        <AccountActions {...web3Props} />
       </div>
     </section>
   );
 };
 
-export default Profile;
+export default Account;
