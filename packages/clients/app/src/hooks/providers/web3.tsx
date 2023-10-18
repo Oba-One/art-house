@@ -1,8 +1,8 @@
-import { useAccount, useChainId, useDisconnect, useSignMessage } from "wagmi";
 import { SiweMessage } from "siwe";
 import { usePrivyWagmi } from "@privy-io/wagmi-connector";
-import { ConnectedWallet, useWallets, usePrivy } from "@privy-io/react-auth";
 import { createContext, useContext, useEffect, useState } from "react";
+import { ConnectedWallet, useWallets, usePrivy } from "@privy-io/react-auth";
+import { useAccount, useChainId, useDisconnect, useSignMessage } from "wagmi";
 
 import { apiClient } from "../../modules/axios";
 

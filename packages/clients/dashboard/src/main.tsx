@@ -21,7 +21,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <WagmiConfig config={config}>
       <PrivyProvider
         appId={import.meta.env.VITE_PRIVY_APP_ID ?? ""}
-        // onSuccess={handleLogin}
         config={{
           loginMethods: ["email", "wallet"],
           appearance: {

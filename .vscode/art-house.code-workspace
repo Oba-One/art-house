@@ -21,8 +21,7 @@
       "path": "../packages/clients/dashboard"
     },
     {
-      "name": "packages",
-      "path": "../waves/packages"
+      "path": "../../../waves/packages"
     }
   ],
   "settings": {

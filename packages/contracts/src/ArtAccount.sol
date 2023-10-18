@@ -1,47 +1,32 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
-import { Account } from "@tokenbound/contracts/Account.sol";
+import {Account} from "@tokenbound/contracts/Account.sol";
 
 contract ArtAccount is Account {
+    string public nfcID;
 
-    string nfcID;
-    
-    enum PaletteEnum {
-        MARKER,
-        CRAYON,
-        PENCIL
-    }
-
-    struct Order {
-        uint8 quantity;
-        StyleEnum style;
-        address art;
-    }
-
-    function initialize(string memory _nfcID, address _organizer) external initializer {
+    function initialize(string memory _nfcID) external initializer {
         nfcID = _nfcID;
     }
 
-    function startTransfer(Order memory _order) external returns (uint256, uint256) {
-      
-
-        return (tokenId, 0);
+    function startTransfer() external returns (uint256, uint256) {
+        return (0, 0);
     }
 
-    function approveTransfer(address _art, PaletteEnum _palette) external returns (uint256, uint256) {
-        return (tokenId, 0);
+    function approveTransfer() external returns (uint256, uint256) {
+        return (0, 0);
     }
 
-    function completeTransfer(address _art, PaletteEnum _palette) external returns (uint256, uint256) {
+    function completeTransfer() external returns (uint256, uint256) {
+        return (0, 0);
     }
 
-    function moveHouse(address _art, PaletteEnum _palette) external returns (uint256, uint256) {
-        return (tokenId, 0);
+    function moveHouse() external returns (uint256, uint256) {
+        return (0, 0);
     }
 
-    function update(address _art, PaletteEnum _palette) external returns (uint256, uint256) {
-        return (tokenId, 0);
+    function update() external returns (uint256, uint256) {
+        return (0, 0);
     }
-
 }
