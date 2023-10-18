@@ -1,4 +1,13 @@
 import { a, useSpring, config } from "@react-spring/web";
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import { useArt } from "../hooks/views/useArt";
+import { useCommunity } from "../hooks/views/useCommunity";
+import { useAccount } from "../hooks/views/useAccount";
+
+import { ArtView } from "./art";
+import { CommunityView } from "./community";
+import { AccountView } from "./account";
 
 const Views = () => {
   const style = useSpring({
@@ -8,12 +17,21 @@ const Views = () => {
     },
   });
 
+  const art = useArt();
+  const community = useCommunity();
+  const account = useAccount();
+
   return (
     <a.main
       className={`relative h-[calc(100svh+4rem)] py-4 sm:py-16 md:py-24`}
       style={style}
     >
-      <div className="relative h-full z-10 py-8 px-6 md:px-12 sm:px-8 max-w-screen-xl sm:mx-auto flex flex-col sm:flex-row-reverse items-center gap-6 sm:gap-8 lg:gap-24"></div>
+      <Routes location={location}>
+        <Route path="art" element={<ArtView {...art} />} />
+        <Route path="community" element={<CommunityView {...community} />} />
+        <Route path="account" element={<AccountView {...account} />} />
+        <Route path="*" element={<Navigate to="art" />} />
+      </Routes>
     </a.main>
   );
 };

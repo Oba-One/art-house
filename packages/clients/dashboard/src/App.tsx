@@ -1,16 +1,33 @@
-import Views from "./views";
+import { Toaster } from "react-hot-toast";
+import { Route, Routes } from "react-router-dom";
+
+import { ArtHouseProvider } from "./hooks/providers/artHouse";
+
 import { Header } from "./components/Layout/Header";
 import { Navigation } from "./components/Layout/Navigation";
 
-import { WavesProvider } from "./hooks/providers/waves";
+import Views from "./views";
+import { AuthView } from "./views/auth";
 
 function App() {
   return (
-    <WavesProvider>
-      <Header />
-      <Navigation />
-      <Views />
-    </WavesProvider>
+    <ArtHouseProvider>
+      <Routes>
+        <Route
+          path="*"
+          element={
+            <>
+              <Header />
+              <Navigation />
+              <Views />
+              <Toaster />
+            </>
+          }
+        />
+        <Route path="/auth/*" element={<AuthView />} />
+      </Routes>
+      <Toaster />
+    </ArtHouseProvider>
   );
 }
 

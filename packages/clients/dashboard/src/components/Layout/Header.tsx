@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { RC as MenuIcon } from "../../assets/menu.svg";
-
 interface HeaderProps {
   isStarted?: boolean;
 }

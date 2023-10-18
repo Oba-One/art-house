@@ -1,10 +1,15 @@
-import { foundry, baseGoerli } from "wagmi/chains";
+import {
+  foundry,
+  optimismGoerli,
+  polygonMumbai,
+  scrollSepolia,
+} from "viem/chains";
 import { configureChains, createConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 
 export const chainConfig = configureChains(
-  [baseGoerli, foundry],
+  [optimismGoerli, polygonMumbai, scrollSepolia, foundry],
   [
     alchemyProvider({ apiKey: import.meta.env.VITE_ALCHEMY_API_KEY! }),
     jsonRpcProvider({

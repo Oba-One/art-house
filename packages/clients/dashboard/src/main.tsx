@@ -1,50 +1,45 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import "./index.css";
 
-import { Provider } from "urql";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
 import { WagmiConfig } from "wagmi";
-import { foundry } from "viem/chains";
 import { BrowserRouter } from "react-router-dom";
+import { QueryClientProvider } from "react-query";
+import { foundry, scrollSepolia } from "viem/chains";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { PrivyWagmiConnector } from "@privy-io/wagmi-connector";
 
-import { urqlClient } from "./modules/urql";
 import { config, chainConfig } from "./modules/wagmi";
+import { reactQueryClient } from "./modules/reactQuery.ts";
 
-import { AppProvider } from "./hooks/providers/app";
 import { Web3Provider } from "./hooks/providers/web3";
 
 import App from "./App.tsx";
 
-import "./index.css";
-
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Provider value={urqlClient}>
-      <WagmiConfig config={config}>
-        <PrivyProvider
-          appId={import.meta.env.VITE_PRIVY_APP_ID ?? ""}
-          // onSuccess={handleLogin}
-          config={{
-            loginMethods: ["email", "wallet"],
-            appearance: {
-              theme: "light",
-              // accentColor: "#d6d0cb",
-            },
-            additionalChains: [foundry],
-          }}
-        >
-          <PrivyWagmiConnector wagmiChainsConfig={chainConfig}>
-            <BrowserRouter>
-              <AppProvider>
-                <Web3Provider>
-                  <App />
-                </Web3Provider>
-              </AppProvider>{" "}
-            </BrowserRouter>
-          </PrivyWagmiConnector>
-        </PrivyProvider>
-      </WagmiConfig>
-    </Provider>
+    <WagmiConfig config={config}>
+      <PrivyProvider
+        appId={import.meta.env.VITE_PRIVY_APP_ID ?? ""}
+        // onSuccess={handleLogin}
+        config={{
+          loginMethods: ["email", "wallet"],
+          appearance: {
+            theme: "light",
+          },
+          additionalChains: [foundry, scrollSepolia],
+        }}
+      >
+        <PrivyWagmiConnector wagmiChainsConfig={chainConfig}>
+          <QueryClientProvider client={reactQueryClient}>
+            <Web3Provider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </Web3Provider>
+          </QueryClientProvider>
+        </PrivyWagmiConnector>
+      </PrivyProvider>
+    </WagmiConfig>
   </React.StrictMode>
 );
