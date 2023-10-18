@@ -16,9 +16,7 @@
     "deploy:op-goerli": "source .env && FOUNDRY_PROFILE=op-goerli forge script script/OpGoerli.s.sol:OpScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
     "deploy:polygon-mumbai": "source .env && FOUNDRY_PROFILE=polygon-mumbai forge script script/PolygonMumbai.s.sol:PolygonMumbaiScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast"
   },
-  "dependencies": {
-    "ethers": "^6.7.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "3.0.4",
@@ -40,12 +38,12 @@
     "hardhat": "2.17.1",
     "hardhat-contract-sizer": "^2.10.0",
     "hardhat-gas-reporter": "^1.0.8",
-    "solidity-coverage": "^0.8.1",
-    "solhint": "^3.3.7",
+    "prettier": "3.0.3",
+    "prettier-plugin-solidity": "^1.1.3",
+    "solidity-coverage": "^0.8.5",
+    "solhint": "^3.6.2",
+    "solhint-plugin-prettier": "0.0.5",
     "ts-node": ">=8.0.0",
-    "typechain": "^8.2.0",
-    "ds-test": "https://github.com/dapphub/ds-test.git#e282159d5170298eb2455a6c05280ab5a73a4ef0",
-    "prettier": "^2.6.2",
-    "prettier-plugin-solidity": "^1.0.0-beta.19"
+    "typechain": "^8.2.0"
   }
 }

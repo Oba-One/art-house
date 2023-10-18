@@ -3,7 +3,7 @@ pragma solidity ^0.8.21;
 
 import { Account } from "tokenbound/contracts/Account.sol";
 
-contract MemberAccount is Account {
+contract MemberAccount is Account{
     event PrintPurchased(
         address indexed buyer, address art, uint256 indexed tokenId, uint256 indexed orderId, StyleEnum style
     );
