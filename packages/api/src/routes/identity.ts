@@ -26,6 +26,7 @@ identityRouter.post("/login", async function (req: Request, res: Response) {
     });
 
     req.session.siwe = message;
+
     if (message.expirationTime) {
       req.session.cookie.expires = new Date(message.expirationTime);
     }
