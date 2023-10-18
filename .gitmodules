@@ -10,6 +10,3 @@
 [submodule "packages/contracts/lib/safe-contracts"]
 	path = packages/contracts/lib/safe-contracts
 	url = https://github.com/safe-global/safe-contracts
-[submodule "packages/contracts/lib/contracts"]
-	path = packages/contracts/lib/contracts
-	url = https://github.com/tokenbound/contracts
