@@ -8,10 +8,9 @@ import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 contract ArtRegistry is ERC721, ERC721Burnable, Ownable {
     uint256 private _nextTokenId;
 
-    constructor(address initialOwner)
-        ERC721("Art", "ART ")
-        Ownable()
-    {}
+    constructor(address _owner) ERC721("Art", "ART") {
+        Ownable(_owner);
+    }
 
     function mintArt(address house, string memory nfcId, string memory metadata) external  {
         uint256 tokenId = _nextTokenId++;
@@ -19,7 +18,7 @@ contract ArtRegistry is ERC721, ERC721Burnable, Ownable {
     }
 
     function burnArt(uint256 tokenId) external {
-        require(_isApprovedOrOwner(_msgSender(), tokenId), "ArtRegistry: caller is not owner nor approved");
+
         _burn(tokenId);
     }
 }

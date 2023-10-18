@@ -1,32 +1,22 @@
 {
   "folders": [
     {
-      "name": "web3-starter-kit",
+      "path": "../waves/packages"
+    },
+    {
       "path": ".."
     },
     {
-      "name": "app",
-      "path": "../packages/clients/app"
+      "path": "../packages/contracts"
     },
     {
-      "name": "web",
-      "path": "../packages/clients/web"
-    },
-    {
-      "name": "dashboard",
-      "path": "../packages/clients/dashboard"
-    },
-    {
-      "name": "api",
       "path": "../packages/api"
     },
     {
-      "name": "graph",
-      "path": "../packages/graph"
+      "path": "../packages/clients/app"
     },
     {
-      "name": "contracts",
-      "path": "../packages/contracts"
+      "path": "../packages/clients/dashboard"
     }
   ],
   "settings": {
