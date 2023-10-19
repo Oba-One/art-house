@@ -1,6 +1,5 @@
 import { defineConfig } from "@wagmi/cli";
 import { foundry, react } from "@wagmi/cli/plugins";
-// import * as chains from "wagmi/chains";
 
 /**
  * Wagmi cli will automatically generate react hooks from your forge contracts
@@ -29,6 +28,7 @@ export default defineConfig({
         clean: true,
         build: true,
       },
+      exclude: ["IEAS.sol/**", "ISchemaResolver.sol/**", "contracts/**"],
     }),
     /**
      * Generates react hooks from your abis

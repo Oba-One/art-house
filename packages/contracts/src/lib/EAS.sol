@@ -12,9 +12,6 @@ library EASLib {
         } else {
             revert("Invalid chain id");
         }
-
-        uint256 tokenId = _nextTokenId++;
-        _safeMint(house, tokenId);
     }
 
     function revoke(address house, string memory nfcId, string memory metadata) external {
@@ -27,8 +24,5 @@ library EASLib {
         } else {
             revert("Invalid chain id");
         }
-
-        uint256 tokenId = _nextTokenId++;
-        _safeMint(house, tokenId);
     }
 }

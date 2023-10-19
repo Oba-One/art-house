@@ -13,6 +13,7 @@ extra_output_files = [
   "abi",
   "evm.bytecode"
 ]
+allow_paths = ["../../node_modules"]
 fs_permissions = [{ access = "read", path = "./"}]
 eth_rpc_url = "http://localhost:8545"
 
