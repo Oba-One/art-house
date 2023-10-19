@@ -9,14 +9,6 @@ src = 'src'
 test = 'test'
 out = 'out'
 libs = ['lib']
-allow_paths = [
-  # pnpm symlinks to the project root's node_modules
-  "../../node_modules",
-  # template uses linked mud packages from within the mud monorepo
-  "../../../../packages",
-  # projects created from this template and using linked mud packages
-  "../../../mud/packages",
-]
 extra_output_files = [
   "abi",
   "evm.bytecode"

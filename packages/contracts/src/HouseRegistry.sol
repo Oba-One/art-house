@@ -8,7 +8,9 @@ import {Ownable} from "openzeppelin-contracts/access/Ownable.sol";
 contract HouseResgistry is ERC721, ERC721Burnable, Ownable {
     uint256 private _nextTokenId;
 
-    constructor(address _initialOwner, string memory _name) ERC721(_name, "HOUSE") {}
+    constructor(address _initialOwner, string memory _name) ERC721(_name, "HOUSE") {
+        transferOwnership(_initialOwner);
+    }
 
     function mintHouse(address to) public {
         uint256 tokenId = _nextTokenId++;

@@ -43,7 +43,7 @@
       "editor.defaultFormatter": "JuanBlanco.solidity"
     },
     "solidity.formatter": "forge",
-    "solidity.compileUsingRemoteVersion": "v0.8.21",
+    "solidity.compileUsingRemoteVersion": "v0.8.21+commit.d9974bed",
     "solidity.remappings": [
       // "forge-std/=lib/forge-std/src/",
       // "tokenbound/=lib/tokenbound/src",
@@ -53,6 +53,7 @@
       // "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
       // "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/"
     ],
-    "testing.automaticallyOpenPeekView": "never"
+    "testing.automaticallyOpenPeekView": "never",
+    "solidity.compileUsingLocalVersion": "/Users/afo/Code/me/art-house/packages/contracts/soljson-v0.8.21+commit.d9974bed.js"
   }
 }

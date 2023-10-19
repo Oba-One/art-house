@@ -8,7 +8,9 @@ import {Ownable} from "openzeppelin-contracts/access/Ownable.sol";
 contract MemberRegistry is ERC721, ERC721Burnable, Ownable {
     uint256 private _nextTokenId;
 
-    constructor(address _initialOwner, string memory _name) ERC721(_name, "MMBR") {}
+    constructor(address _initialOwner, string memory _name) ERC721(_name, "MMBR") {
+        transferOwnership(_initialOwner);
+    }
 
     function mintMember(address to) public {
         uint256 tokenId = _nextTokenId++;
