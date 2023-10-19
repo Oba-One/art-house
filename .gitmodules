@@ -10,3 +10,6 @@
 [submodule "packages/contracts/lib/safe-contracts"]
 	path = packages/contracts/lib/safe-contracts
 	url = https://github.com/safe-global/safe-contracts
+[submodule "packages/contracts/lib/eas-contracts"]
+	path = packages/contracts/lib/eas-contracts
+	url = https://github.com/ethereum-attestation-service/eas-contracts
