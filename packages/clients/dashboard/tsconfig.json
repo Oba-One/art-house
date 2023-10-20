@@ -1,25 +1,30 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "moduleResolution": "Node",
     "noEmit": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
-
-    /* Linting */
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "jsxImportSource": "@emotion/react",
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "../generated.ts"],
+  "exclude": [
+    "../generated.ts",
+  ]
+
 }

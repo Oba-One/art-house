@@ -13,7 +13,13 @@ function getAccessToken() {
 }
 
 export function makeStorageClient() {
-  return new Web3Storage({ token: getAccessToken() });
+  const token = getAccessToken();
+
+  if (!token) {
+    throw new Error("No token found");
+  }
+
+  return new Web3Storage({ token });
 }
 
 export function getFiles() {
@@ -30,7 +36,7 @@ export async function storeFiles(files: File[]) {
   return cid;
 }
 
-async function storeWithProgress(files: File[]) {
+export async function storeWithProgress(files: File[]) {
   // show the root cid as soon as it's ready
   const onRootCidReady = (cid: string) => {
     console.log("uploading files with cid:", cid);

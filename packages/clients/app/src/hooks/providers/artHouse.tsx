@@ -18,7 +18,7 @@ export const ArtHouseProvider = ({ children }: Props) => {
 
   if (currentValue) throw new Error("ArtHouseProvider can only be used once");
 
-  const { address } = useAccount();
+  const { } = useAccount();
 
   return (
     <ArtHouseContext.Provider

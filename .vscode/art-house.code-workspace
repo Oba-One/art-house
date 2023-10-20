@@ -13,10 +13,6 @@
       "path": "../packages/api"
     },
     {
-      "name": "app",
-      "path": "../packages/clients/app"
-    },
-    {
       "name": "dashboard",
       "path": "../packages/clients/dashboard"
     },
@@ -39,21 +35,7 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "files.trimTrailingWhitespace": true,
-    "[solidity]": {
-      "editor.defaultFormatter": "JuanBlanco.solidity"
-    },
-    "solidity.formatter": "forge",
-    "solidity.compileUsingRemoteVersion": "v0.8.21+commit.d9974bed",
-    "solidity.remappings": [
-      // "forge-std/=lib/forge-std/src/",
-      // "tokenbound/=lib/tokenbound/src",
-      // "highlight/=lib/hl-evm-contracts/contracts",
-      // "@opengsn/contracts/=node_modules/@opengsn/contracts/",
-      // "@ethereum-attestation-service/eas-contracts/=node_modules/@ethereum-attestation-service/eas-contracts/",
-      // "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
-      // "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/"
-    ],
     "testing.automaticallyOpenPeekView": "never",
-    "solidity.compileUsingLocalVersion": "/Users/afo/Code/me/art-house/packages/contracts/soljson-v0.8.21+commit.d9974bed.js"
+    "solidity.defaultCompiler": "localNodeModule"
   }
 }

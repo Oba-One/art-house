@@ -15,7 +15,8 @@
     "deploy:polygon-mumbai": "source .env && FOUNDRY_PROFILE=polygon-mumbai forge script script/PolygonMumbai.s.sol:PolygonMumbaiScript --private-key $FORGE_PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast"
   },
   "dependencies": {
-    "@ethereum-attestation-service/eas-contracts": "1.0.0-beta.0"
+    "@ethereum-attestation-service/eas-contracts": "1.0.0-beta.0",
+    "@tableland/evm": "4.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.9",

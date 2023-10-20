@@ -6,7 +6,6 @@ import { port } from "../constants";
 export const authRouter = Router();
 
 const api_uri = process.env.NODE_ENV === "development" ? `http://localhost:${port}` : `https://api.waves.house`;
-// const app_uri = process.env.NODE_ENV === "development" ? `http://localhost:3001` : `https://app.art.waves.house`;
 const dashboard_uri = process.env.NODE_ENV === "development" ? `http://localhost:3002` : `https://art.waves.house`;
 
 authRouter.get("/auth/square", async function (req: Request, res: Response) {

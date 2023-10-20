@@ -3,6 +3,7 @@ import { a, useSpring, config } from "@react-spring/web";
 import { ArtDataProps } from "../../hooks/views/useArt";
 import { ArtViewer } from "../../components/Art/Viewer";
 import { HouseViewer } from "../../components/House/Viewer";
+import { Outlet } from "react-router-dom";
 
 interface CommunityViewerProps extends ArtDataProps {
   // address: string;
@@ -25,7 +26,8 @@ export const CommunityViewer: React.FC<CommunityViewerProps> = ({
       style={style}
     >
       <ArtViewer {...artHouse} />
-      <HouseViewer />
+      {/* <HouseViewer /> */}
+      <Outlet />
     </a.main>
   );
 };

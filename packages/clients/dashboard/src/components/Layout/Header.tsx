@@ -1,17 +1,28 @@
 import React from "react";
+import { useWeb3 } from "../../hooks/providers/web3";
 
 interface HeaderProps {
   isStarted?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = () => {
+  const { activeWallet, login, logout } = useWeb3();
+
   return (
     <header
-      className={`bg-base-100 py-2 px-8 flex items-center justify-between border-b-2`}
+      className={`py-2 px-8 flex items-center justify-between border-b-2`}
     >
       <h1 className="font-bold text-4xl">WAVES</h1>
       <div>
-        <button className="btn btn-sm btn-primary">Login</button>
+        {activeWallet ? (
+          <button className="btn btn-primary btn-sm" onClick={logout}>
+            Logout
+          </button>
+        ) : (
+          <button className="btn btn-primary btn-sm" onClick={login}>
+            Login
+          </button>
+        )}
       </div>
     </header>
   );

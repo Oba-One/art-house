@@ -1,5 +1,5 @@
 import { a, useSpring, config } from "@react-spring/web";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 
 import { useArt } from "../hooks/views/useArt";
 import { useCommunity } from "../hooks/views/useCommunity";
@@ -25,19 +25,20 @@ const Views = () => {
 
   return (
     <a.main
-      className={`relative h-[calc(100svh+4rem)] py-4 sm:py-16 md:py-24`}
+      className={`relative h-full bg-stone-200 py-4 sm:py-16 md:py-24`}
       style={style}
     >
       <Routes location={location}>
-        <Route path="art" element={<ArtView {...art} />}>
+        <Route path="art" element={<>Art</>}>
           <Route path=":address" element={<ArtViewer {...art} />} />
         </Route>
         <Route path="community" element={<CommunityView {...community} />}>
           <Route path=":address" element={<CommunityViewer {...community} />} />
         </Route>
         <Route path="account" element={<AccountView {...account} />} />
-        <Route path="*" element={<Navigate to="art" />} />
+        {/* <Route path="*" element={<Navigate to="/art" />} /> */}
       </Routes>
+      <Outlet />
     </a.main>
   );
 };

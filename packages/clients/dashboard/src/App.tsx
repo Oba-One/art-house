@@ -1,5 +1,5 @@
+import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
 
 import { ArtHouseProvider } from "./hooks/providers/artHouse";
 
@@ -9,24 +9,30 @@ import { Navigation } from "./components/Layout/Navigation";
 import Views from "./views";
 import { AuthView } from "./views/auth";
 
+const router = createBrowserRouter([
+  {
+    path: "*",
+    element: (
+      <>
+        <Header />
+        <Navigation />
+        <Views />
+      </>
+    ),
+    // loader: rootLoader,
+  },
+  {
+    path: "/auth",
+    element: <AuthView />,
+    // loader: rootLoader,
+  },
+]);
+
 function App() {
   return (
     <ArtHouseProvider>
-      <Routes>
-        <Route
-          path="*"
-          element={
-            <>
-              <Header />
-              <Navigation />
-              <Views />
-              <Toaster />
-            </>
-          }
-        />
-        <Route path="/auth/*" element={<AuthView />} />
-      </Routes>
       <Toaster />
+      <RouterProvider router={router} />
     </ArtHouseProvider>
   );
 }

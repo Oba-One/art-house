@@ -3,6 +3,8 @@ pragma solidity >=0.8.21;
 
 import {Account} from "tokenbound/Account.sol";
 
+import {MemberTable} from "../tables/Member.sol";
+
 contract MemberAccount is Account {
     enum Vote {
         Yay,
@@ -10,7 +12,11 @@ contract MemberAccount is Account {
         Abstain
     }
 
-    constructor(address _guardian, address _entryPoint) Account(_guardian, _entryPoint) {}
+    address public memberTable;
+
+    constructor(address _memberTable, address _guardian, address _entryPoint) Account(_guardian, _entryPoint) {
+        memberTable = _memberTable;
+    }
 
     function makeProposal(string memory _name, string memory _description) external returns (uint256, uint256) {
         return (0, 0);

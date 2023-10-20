@@ -3,7 +3,6 @@ import "./index.css";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { WagmiConfig } from "wagmi";
-import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider } from "react-query";
 import { foundry, scrollSepolia } from "viem/chains";
 import { PrivyProvider } from "@privy-io/react-auth";
@@ -32,9 +31,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <PrivyWagmiConnector wagmiChainsConfig={chainConfig}>
           <QueryClientProvider client={reactQueryClient}>
             <Web3Provider>
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
+              <App />
             </Web3Provider>
           </QueryClientProvider>
         </PrivyWagmiConnector>

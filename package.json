@@ -1,38 +1,19 @@
 {
-  "name": "web3-starter-kit",
+  "name": "art-house",
   "version": "0.0.0",
   "private": true,
   "keywords": [
     "web3",
-    "starter",
-    "kit",
     "dapp",
     "ethereum",
     "solidity",
-    "hardhat",
     "react",
-    "next",
     "typescript",
     "pnpm",
-    "foundry",
-    "lattice",
-    "latticexyz"
+    "foundry"
   ],
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "packages/clients/*"
-    ],
-    "nohoist": [
-      "**/@openzeppelin/contracts",
-      "**/@openzeppelin/contracts/**",
-      "**/@openzeppelin/contracts-upgradeable",
-      "**/@openzeppelin/contracts-upgradeable/**"
-    ]
-  },
   "scripts": {
     "foundry:up": "curl -L https://foundry.paradigm.xyz | bash && bash $HOME/.foundry/bin/foundryup",
-    "mud:up": "pnpm mud set-version --tag main && pnpm install",
     "prepare": "(forge --version || pnpm foundry:up)",
     "build": "pnpm recursive run build",
     "lint": "pnpm recursive run lint",
@@ -41,16 +22,13 @@
     "dev:app": "pnpm --filter 'app' run dev",
     "dev:dashboard": "pnpm --filter 'dashboard' run  dev",
     "dev:api": "pnpm --filter 'api' run  dev",
-    "dev:contracts": "pnpm --filter 'contracts' run  dev",
-    "deploy:local": "pnpm --filter 'contracts' run deploy:local --network local",
-    "deploy:op-goerli": "pnpm --filter 'contracts' run deploy:op-goerli --network op-goerli",
-    "deploy:scroll-sepolia": "pnpm --filter 'contracts' run deploy:scroll-sepolia --network scroll-sepolia",
-    "deploy:polygon-mumbai": "pnpm --filter 'contracts' run deploy:polygon-mumbai --network polygon-mumbai"
+    "dev:contracts": "pnpm --filter 'contracts' run  dev"
   },
   "dependencies": {
     "dotenv": "16.3.1",
     "ethers": "^6.8.0",
     "wagmi": "^1.4.4",
+    "web3.storage": "4.5.5",
     "viem": "^1.16.6"
   },
   "devDependencies": {

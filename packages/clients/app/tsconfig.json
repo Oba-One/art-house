@@ -21,9 +21,6 @@
     "noImplicitReturns": true,
     "jsxImportSource": "@emotion/react"
   },
-  "include": [
-    "src",
-    "../generated.ts",
-    "../dashboard/src/modules/web3Storage.ts"
-  ]
+  "include": ["src", "../generated.ts"],
+  "exclude": ["../generated.ts"]
 }

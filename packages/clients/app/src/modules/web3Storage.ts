@@ -36,7 +36,7 @@ export async function storeFiles(files: File[]) {
   return cid;
 }
 
-async function storeWithProgress(files: File[]) {
+export async function storeWithProgress(files: File[]) {
   // show the root cid as soon as it's ready
   const onRootCidReady = (cid: string) => {
     console.log("uploading files with cid:", cid);

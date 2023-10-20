@@ -1,28 +1,34 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
+import {IEAS, AttestationRequest, RevocationRequest} from "eas-contracts/IEAS.sol";
+
+import {EAS_OP, EAS_POLYGON_MUMBAI, EAS_SCROLL_SEPOLIA} from "../Constants.sol";
+
+error InvalidChainId();
+
 library EASLib {
-    function attest(address house, string memory nfcId, string memory metadata) external {
+    function attest(AttestationRequest memory attestation) external {
         if (block.chainid == 420) {
-            // TODO: make attestations for each chain
+            IEAS(EAS_OP).attest(attestation);
         } else if (block.chainid == 80001) {
-            // TODO: make attestations for each chain
+            IEAS(EAS_POLYGON_MUMBAI).attest(attestation);
         } else if (block.chainid == 534351) {
-            // TODO: make attestations for each chain
+            IEAS(EAS_SCROLL_SEPOLIA).attest(attestation);
         } else {
-            revert("Invalid chain id");
+            revert InvalidChainId();
         }
     }
 
-    function revoke(address house, string memory nfcId, string memory metadata) external {
+    function revoke(RevocationRequest memory revocation) external {
         if (block.chainid == 420) {
-            // TODO: make attestations for each chain
+            IEAS(EAS_OP).revoke(revocation);
         } else if (block.chainid == 80001) {
-            // TODO: make attestations for each chain
+            IEAS(EAS_POLYGON_MUMBAI).revoke(revocation);
         } else if (block.chainid == 534351) {
-            // TODO: make attestations for each chain
+            IEAS(EAS_SCROLL_SEPOLIA).revoke(revocation);
         } else {
-            revert("Invalid chain id");
+            revert InvalidChainId();
         }
     }
 }

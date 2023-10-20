@@ -28,7 +28,12 @@ export default defineConfig({
         clean: true,
         build: true,
       },
-      exclude: ["IEAS.sol/**", "ISchemaResolver.sol/**", "contracts/**"],
+      exclude: [
+        "IEAS.sol/**",
+        "ISchemaResolver.sol/**",
+        "ITablelandTables.sol/**",
+        "contracts/**",
+      ],
     }),
     /**
      * Generates react hooks from your abis

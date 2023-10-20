@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import { RC as WorldIcon } from "../../assets/world.svg";
 import { RC as ProfileIcon } from "../../assets/profile.svg";
 import { RC as DashboardIcon } from "../../assets/dashboard.svg";
-import { useApp } from "../../hooks/providers/app";
 
 const tabs: {
   path: string;
@@ -21,34 +20,26 @@ const tabs: {
     Icon: ProfileIcon,
   },
   {
-    path: "/synths",
-    title: "Synths",
-    Icon: DashboardIcon,
-  },
-  {
-    path: "/waves",
-    title: "Waves",
+    path: "/community",
+    title: "Community (soon)",
     Icon: DashboardIcon,
   },
   {
     path: "/events",
-    title: "Events",
+    title: "Events (soon)",
     Icon: WorldIcon,
   },
 ];
 
 export const Navigation = () => {
   const { pathname } = useLocation();
-  const {} = useApp();
 
   const spring = useSpring({
     from: {
       opacity: 0,
-      // transform: "translateY(100%)",
     },
     to: {
       opacity: 1,
-      // transform: "translateY(0)",
     },
     config: {
       ...config.slow,
@@ -59,7 +50,7 @@ export const Navigation = () => {
 
   return (
     <a.nav
-      className={"bg-base-100 py-6 px-8 w-full border-r-2 flex flex-col gap-1"}
+      className={"py-6 px-8 w-full border-r-2 flex flex-col gap-1"}
       style={spring}
     >
       {tabs.map(({ path, Icon, title }) => (
@@ -73,7 +64,7 @@ export const Navigation = () => {
           >
             <Icon width={32} height={32} />
             <p
-              className={`text-sm sm:text-xl tracking-wider ${
+              className={`text-sm sm:text-lg tracking-wider ${
                 pathname === path ? "font-semibold" : ""
               }`}
             >

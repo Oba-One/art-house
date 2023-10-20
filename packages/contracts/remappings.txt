@@ -3,3 +3,4 @@ openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/
 forge-std/=lib/forge-std/src/
 safe-contracts/=lib/safe-contracts/contracts/
 eas-contracts/=node_modules/@ethereum-attestation-service/eas-contracts/contracts/
+tableland-contracts/=node_modules/@tableland/evm/contracts/
